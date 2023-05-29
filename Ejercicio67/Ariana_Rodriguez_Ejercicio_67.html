@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 67</title>
+    <style>
+        body {
+            font-family:Arial,sans-serif;
+            text-align:center;
+        }
+        #resultado {
+            font-size:40px;
+            font-weight:bold;
+            margin-top:20px;
+			margin-bottom:20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Suma de cuadrados de números</h1>
+    <div id="numeros"></div>
+    <div id="resultado"></div>
+    
+    <script>
+        const numbers = [5,4,3,2,1];
+        let suma = 0;
+
+        for(var i=0;i<numbers.length;i++){
+            const number = numbers[i]
+            suma = suma + (number ** 2)
+        }
+
+        console.log(suma);
+
+        document.getElementById('numeros').innerText='Los números del array son: ' + numbers.join();
+        document.getElementById('resultado').innerText='El resultado es: ' + suma 
+    </script>
+</body>
+</html>

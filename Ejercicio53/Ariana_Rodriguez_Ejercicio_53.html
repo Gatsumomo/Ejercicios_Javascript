@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 53</title>
+  
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    input, button {
+      font-size: 16px; 
+    }
+  </style>
+</head>
+
+<body>
+
+    <h1>Piedra, papel o tijeras</h1>
+    <p>Jugador 1:</p>
+    <button onclick="jugar('piedra')">Piedra</button>
+    <button onclick="jugar('papel')">Papel</button>
+    <button onclick="jugar('tijeras')">Tijeras</button>
+
+    <p>Jugador 2:</p>
+    <button onclick="jugar('piedra', true)">Piedra</button>
+    <button onclick="jugar('papel', true)">Papel</button>
+    <button onclick="jugar('tijeras', true)">Tijeras</button><br/><br/>
+
+    <button onclick="detener()">Detener juego</button>
+
+    <div id="resultado"></div>
+
+    <script>
+        let eleccionJugador1 = '';
+        let eleccionJugador2 = '';
+
+        function jugar(opcion, esJugador2 = false) {
+            if (esJugador2) {
+                eleccionJugador2 = opcion;
+            } else {
+                eleccionJugador1 = opcion;
+            }
+
+            let resultado = '';
+            switch(eleccionJugador1 && eleccionJugador2){
+                case (eleccionJugador1 === eleccionJugador2):
+                    resultado = 'Empate';
+                    break;
+                case (eleccionJugador1 === 'piedra' && eleccionJugador2 === 'tijeras'):
+                    resultado = 'Jugador 1 gana';
+                    break;
+                case (eleccionJugador1 === 'papel' && eleccionJugador2 === 'piedra'):
+                    resultado = 'Jugador 1 gana';
+                    break;
+                case (eleccionJugador1 === 'tijeras' && eleccionJugador2 === 'papel'):
+                    resultado = 'Jugador 1 gana';
+                    break;
+                default:
+                    resultado = 'Jugador 2 gana';
+                    break;
+            }
+                document.getElementById('resultado').innerHTML = resultado;
+                eleccionJugador1 = '';
+                eleccionJugador2 = '';
+        }
+
+        function detener(){
+            resultado = "<h4>El juego ha sido detenido</h4>"
+            document.getElementById('resultado').innerHTML=resultado;
+        }
+    </script>
+  
+</body>
+</html>

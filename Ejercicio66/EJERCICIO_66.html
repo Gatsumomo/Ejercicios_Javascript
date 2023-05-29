@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+
+<html lang="es">
+
+  <head>
+
+    <meta charset="UTF-8">
+    <title>Productos</title>
+
+    <style> /* Estilos CSS para el listado de productos */
+      ul {
+        list-style:none;
+        padding:0;
+      }
+      li {
+        margin-bottom:10px;
+        font-size:20px;
+        font-weight:bold;
+      }
+      span {
+        font-weight:normal;
+      }
+    </style>
+
+  </head>
+
+  <body>
+
+    <div id="app">
+      <ul>
+        <!-- Los productos se mostrarán aquí -->
+      </ul>
+    </div>
+
+    <script>
+      const products = [
+        { title: 'Hamburguesa', price: 15 },
+        { title: 'Pizza', price: 12 },
+        { title: 'Perrito', price: 9 },
+      ]
+      const app = document.getElementById('app')
+      const ul = app.querySelector('ul')
+		/*La función "querySelector()" permite seleccionar un elemento HTML específico dentro del documento.
+		En este caso, la variable app debe contener una referencia a un elemento HTML.
+		Después, la función "querySelector()" es utilizada en la variable "app" para buscar dentro de él un elemento <ul> (una lista desordenada en HTML).
+		Finalmente, la variable ul se asigna a este elemento encontrado, lo que permite que sea utilizado más adelante en el código para realizar operaciones como agregar o quitar elementos de la lista.
+		Es importante destacar que si no se encuentra ningún elemento <ul> dentro de "app", entonces la variable "ul" tendrá un valor de "null" */
+      products.forEach(product => { //Función de Flecha (Arrow Function)
+        const li = document.createElement('li')
+        li.innerHTML = `${product.title} - <span>${product.price}€</span>`
+		//<span></span>: Es un contenedor en línea que sirve para aplicar estilo al texto o agrupar elementos en línea.
+        ul.appendChild(li)
+      })
+    </script>
+	
+	<!--Este código está utilizando el método "forEach()" para iterar sobre cada elemento del array "products".
+	Dentro del ciclo, se crea un elemento <li> (un elemento de lista) con "document.createElement('li')".
+	Después, se asigna contenido al elemento <li> con la propiedad "innerHTML".
+	La plantilla de cadena (template string) utilizada dentro de las comillas invertidas `` permite insertar valores de variables dentro de la cadena utilizando la sintaxis "${variable}".
+	En este caso, se están insertando las propiedades "title" y "price" de cada objeto "product" en la plantilla de cadena.
+	Y, finalmente, se agrega el elemento <li> recién creado a un elemento <ul> (una lista desordenada) con el método "appendChild()".
+	En resumen, este código crea una lista de elementos <li> para cada objeto "product" en el array "products", mostrando así su "title" y su "price" en "€". -->
+	
+  </body>
+
+</html>

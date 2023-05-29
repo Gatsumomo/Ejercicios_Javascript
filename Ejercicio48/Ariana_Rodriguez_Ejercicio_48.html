@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 48</title>
+  
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    input, button {
+      font-size: 16px; 
+    }
+  </style>
+</head>
+
+<body>
+
+    <h1>Peticion de numeros hasta que se introduzca "salir"</h1>
+    <button onclick="calculo()">Enviar</button>
+    <div id="resultado"></div>
+
+    <script>
+
+    function calculo(){
+      let input
+      do{
+        let input;
+        while (true) {
+          input = prompt("Introduzca un número o escribe 'salir' para detener el bucle:", "");
+          if (input === "salir") {
+            break;
+          }
+        }
+
+				if (!isNaN(parseInt(input))) {
+          console.log("Número introducido:",input);
+        } else {
+          alert("Por favor, introduzca un número válido.");
+        }
+      }while(clave === true) 
+    }
+
+    </script>
+  
+</body>
+
+</html>

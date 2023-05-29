@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 42</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    input, button {
+      font-size: 16px; 
+    }
+  </style>
+</head>
+
+<body>
+    <!--Este está bien-->
+    <h1>Qué día de la semana es según un número dado</h1>
+    <input type="number" id="entrada" placeholder="Introduce un número">
+    <button onclick="peticion()">Enviar</button>
+    <div id="resultado"></div>
+
+    <script>
+        function peticion(){
+            const numero = document.getElementById('entrada');
+            const tabien = parseInt(numero.value);
+            const resultado = document.getElementById('resultado');
+
+            if(tabien <= 7 && tabien >= 1){
+                switch(tabien){
+                    default:
+                        resultado.innerHTML = ('Lunes');
+                        break;
+                    case 2:
+                        resultado.innerHTML = 'Martes';
+                        break;
+                    case 3:
+                        resultado.innerHTML = 'Miercoles';
+                        break;
+                    case 4:
+                        resultado.innerHTML = 'Jueves';
+                        break;
+                    case 5: 
+                        resultado.innerHTML = 'Viernes';
+                        break;
+                    case 6:
+                        resultado.innerHTML = 'Sabado'
+                        break;
+                    case 7:
+                        resultado.innerHTML = 'Domingo'
+                        break;
+                    }
+            }else{
+                resultado.innerHTML = 'El número no es válido pichita'
+            }
+        }
+    </script>
+</body>
+</html>

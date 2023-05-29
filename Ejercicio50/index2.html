@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 48</title>
+  
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    input, button {
+      font-size: 16px; 
+    }
+  </style>
+</head>
+
+<body>
+
+    <h1>Piedra, papel o tijeras</h1>
+    
+    <button onclick="calculo()">Enviar</button><br/><br/>
+    <button onclick="calculo()">Enviar</button><br/><br/>
+    <button onclick="calculo()">Enviar</button><br/><br/>
+
+    <div>
+        <button onclick="calculo()" name=""></button><br/><br/>
+        <button onclick="calculo()"></button><br/><br/>
+        <button onclick="calculo()"></button><br/><br/>
+    </div>
+
+    <div id="resultado"></div>
+
+    <script>
+
+        function calculo(){
+            const primero = document.getElementById('primerJugador')
+            const segundo = document.getElementById('segundoJugador').innerText
+            let resultado = document.getElementById('resultado')
+            
+            if(!(primero === segundo)){
+                if(primero === "tijera"){
+                    if(segundo === "papel"){
+                        resultado.innerHTML = "Ganaste picha"
+                    }else{
+                        resultado.innerHTML = "YOU DIED"
+                    }
+                }
+                if(primero === "papel"){
+                    if(segundo === "piedra"){
+                        resultado.innerHTML = "Ganaste picha"
+                    }else{
+                        resultado.innerHTML = "YOU DIED"
+                    }
+                }
+                if(primero === "piedra"){
+                    if(segundo === "tijera"){
+                        resultado.innerHTML = "Ganaste picha"
+                    }else{
+                        resultado.innerHTML = "YOU DIED"
+                    }
+                }
+            }else{
+                resultado.innerHTML = "Vaya...Empate"
+            }
+        }
+    </script>
+  
+</body>
+</html>

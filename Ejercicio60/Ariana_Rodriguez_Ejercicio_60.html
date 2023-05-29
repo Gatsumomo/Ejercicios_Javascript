@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 60</title>
+  
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    input, button {
+      font-size: 16px; 
+    }
+
+  </style>
+</head>
+
+<body>
+    <h1>LUGAR</h1>
+    <p>Indica tu edad</p>
+    <input type="number" id="numero">
+    <button onclick="generar()">Enviar</button>
+    <div id="res"></div>
+
+    <script>
+      function generar(){
+          let resultado  = document.getElementById('res')
+          let edad = parseInt(document.getElementById('numero').value, 10)
+
+          var clave = true
+          while(clave == true){
+            if(edad <= 17){
+              if(edad >= 1){
+                resultado.innerHTML =+ "Existes"
+                clave = false
+              }else{
+                clave = false
+              }
+            }else{
+              resultado.innerHTML =+ "No existes"
+              clave = false
+            }
+          }
+      }
+    </script>
+  
+</body>
+</html>

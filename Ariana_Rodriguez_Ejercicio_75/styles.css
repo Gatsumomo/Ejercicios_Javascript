@@ -1,0 +1,9 @@
+img{
+    width: 10rem;
+    height: 10rem;
+}
+.wrapper_img{
+    display: flex;
+    margin-left: 25%;
+    margin-top: 15%;
+}

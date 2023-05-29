@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 39</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    input, button {
+      font-size: 16px; 
+    }
+  </style>
+</head>
+
+<body>
+
+    <h1>Lista de números</h1>
+    <input type="number" id="entrada" placeholder="Introduce un número">
+    <button onclick="peticion()">Enviar</button>
+    <div id="resultado"></div>
+
+    <script>
+
+        //esta bien pero solo muestra el final en HTML
+        function peticion(){
+          const numero = document.getElementById('entrada');
+          const tabien = parseInt(numero.value,11)
+          const resultado = document.getElementById('resultado');
+
+          if(tabien <= 7 && tabien >= 1){
+              for(var i = 1;i<=tabien;i++){
+                resultado.innerHTML = i
+              }
+          }else{
+              resultado.innerHTML = 'Introduzca otra vez el número'
+          }
+       }
+    </script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+﻿<!-- EJERCICIO 43 (EJERCICIO 18) – Crear un código HTML+CSS+JavaScript que INTENTE abrir el archivo "documento.txt" y leer su contenido. Si el archivo no se encuentra, se producirá una EXCEPCIÓN "archivo_no_encontrado", y si el archivo se encuentra, pero no se puede leer, se producirá una nueva EXCEPCIÓN "error_de_lectura". Además, independientemente de si se produjo una excepción o no, FINALMENTE se cerrará el archivo, asegurándose de que se liberen los recursos correctamente. -->
+
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+	<meta charset="UTF-8">
+    <title>Leer archivo</title>
+
+	<style>
+		body {
+			font-family:Arial,sans-serif;
+			text-align:center;
+		}
+		input,button {
+			font-size:20px; /*1em =  16px*/
+		}
+		#resultado {
+			margin-top:20px;
+			margin-bottom:20px;
+			font-weight:bold;
+		}
+	</style>
+
+</head>
+
+<body>
+    
+	<h1>Lector de archivos</h1>
+    <input type="file" id="inputArchivo" /> <!-- Se crea un elemento de entrada "<input type="file" id="inputArchivo" />" que permite seleccionar un archivo. -->
+    <div id="contenido"></div> <!-- Se crea un elemento <div> "vacío" con el ID "contenido" donde se mostrará el contenido del archivo. -->
+
+    <script type="text/javascript">
+	// Dentro de la etiqueta <script> se escribe el código JavaScript que maneja la lectura del archivo y la visualización de su contenido.
+        document.getElementById('inputArchivo').addEventListener('change', function(evento) {
+		// Primero, se selecciona el elemento de entrada del archivo por su ID y se le asigna un "addEventListener" para el evento "change".
+		// Este evento se activará cuando se seleccione un archivo.
+		// Cuando se activa el evento "change", se ejecuta la "función anónima" que toma el evento como argumento.
+            
+			let archivo = evento.target.files[0];
+			// Se obtiene el archivo seleccionado del evento "let archivo = evento.target.files[0];"
+            let contenido = document.getElementById('contenido');
+            // Se selecciona el elemento <div> con el ID "contenido" del evento "let contenido = document.getElementById('contenido');"
+            
+			if (archivo) {
+                let lector = new FileReader();
+                // Si hay un archivo seleccionado, se crea un objeto "FileReader" para leer el archivo.
+                			
+				lector.onload = function(e) {
+				// Se asigna una función al evento "onload" del "lector". Esta función se ejecutará cuando el archivo haya sido leído correctamente.
+                    let textoFormateado = e.target.result.replace(/\n/g, '<br>');
+                    contenido.innerHTML = textoFormateado;
+					// Código que permite reemplazar los saltos de línea por etiquetas <br>.
+                };
+                lector.onerror = function() {
+				// Se asigna una función al evento "onerror" del "lector". Esta función se ejecutará si ocurre un error al leer el archivo.
+                    contenido.innerHTML = 'EXCEPCIÓN: error_de_lectura';
+					// Dentro de esta función, se muestra un mensaje de error en el elemento <div> con el ID "contenido" del evento "contenido.innerHTML = 'EXCEPCIÓN: error_de_lectura';"
+                };
+                
+                lector.readAsText(archivo);
+				// Se inicia la lectura del archivo como texto con el evento "lector.readAsText(archivo);"
+            } else {
+                contenido.innerHTML = 'EXCEPCIÓN: archivo_no_encontrado';
+				// Si no hay un archivo seleccionado, se muestra un mensaje de error en el elemento <div> con el ID "contenido" del evento "contenido.innerHTML = 'EXCEPCIÓN: archivo_no_encontrado';"
+            }
+        });
+    </script>
+	
+	<!-- En resumen, este código permite seleccionar un archivo, leer su contenido y mostrarlo en la página web. -->
+	<!-- Si ocurre algún error durante la lectura del archivo, se mostrará un mensaje de error en su lugar. -->
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 40</title>
+  
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    input, button {
+      font-size: 16px; 
+    }
+  </style>
+</head>
+
+<body>
+
+    <h1>Mira la tabla de multiplicar</h1>
+    <input type="number" id="entrada" placeholder="Introduce un número">
+    <button onclick="calculo()">Enviar</button>
+    <div id="resultado"></div>
+
+    <script>
+
+    //el bucle funciona pero solo muestra el final en HTML
+    function calculo(){
+      const numero = document.getElementById('entrada');
+      const tabien = parseInt(numero.value);
+      const resultado = document.getElementById('resultado');
+
+      for(var i = 1;i<=10;i++){
+        var multiplicacion = tabien * i;
+        resultado.innerHTML = tabien + ' x ' + i + ' = ' + multiplicacion;
+      }
+        
+    }
+    </script>
+  
+</body>
+
+</html>

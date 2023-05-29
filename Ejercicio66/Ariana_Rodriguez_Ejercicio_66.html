@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 66</title>
+  
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    input, button {
+      font-size: 16px; 
+    }
+    span{
+      font-style: italic;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Lista</h1>
+  <!--span agrupa lineas por columnas (no hay salto de linea | ocupa el espacio del content)- div agrupa por bloques del box model (Hay salto de linea)-->
+  <div id="app">
+   <!--  <div id="parent"></div> -->
+    <hr>
+    <ul>
+      <!--aca se muestran los productos-->
+    </ul>
+    <hr>
+    <ol>
+      <!--aca se muestran los productos2-->
+    </ol>
+  </div>
+
+  <script>
+/*     const products = [
+      {title: 'Hamburguesa', price: 12},
+      {title: 'Pizza', price: 8},
+      {title: 'Papas fritas', price: 5},
+    ]
+
+    products.forEach(product => {
+      const li = document.createElement('li') //crea un elemento li
+      const parent = document.getElementById('parent') //contenedor para mostrar los productos
+      li.innerHTML = `<span>${product.title}<span/> - ${product.price}€` //plantillas literales
+      parent.appendChild(li) //agrega el elemento li al contenedor ul
+    })
+ */
+
+    //CON FOR
+    const products = [
+      {title: 'Hamburguesa', price: 12},
+      {title: 'Pizza', price: 8},
+      {title: 'Papas fritas', price: 5},
+    ]
+    //con querySelector accederia a un elemento con id app
+    const ul = app.querySelector('#app ul') //contenedor para mostrar los productos
+    for(var i=0;i<products.length;i++){
+      const product = products[i]
+      const li = document.createElement('li') //crea un elemento li
+      li.textContent = `${product.title} - ${product.price}€` //plantillas literales
+      ul.appendChild(li) //agrega el elemento li al contenedor ul
+    } 
+
+    //CON FOREACH
+    const products2 = [
+      {title: 'Mesa', price: 15},
+      {title: 'Silla', price: 10},
+      {title: 'Cama', price: 200},
+    ]
+    const ol = app.querySelector('#app ol') 
+    products2.forEach(product => {
+      const li2 = document.createElement('li') //crea un elemento li
+      li2.textContent = `${product.title} - ${product.price}€` //plantillas literales
+      ol.appendChild(li2) //agrega el elemento li al contenedor ul
+    })
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+  <meta charset="UTF-8">
+  <title>Eventos de Teclado en JavaScript (I) - Vocales</title>
+
+  <style>
+    body {
+      font-family:Arial,sans-serif;
+    }
+    #mensaje {
+      font-size:24px;
+      font-weight:bold;
+      color:#333;
+      margin-top:50px;
+      text-align:center;
+    }
+  </style>
+  
+  <script type="text/javascript">
+    function mostrarMensaje(tecla) {
+      const mensaje = document.getElementById("mensaje");
+      switch (tecla) {
+        case "a":
+          mensaje.innerHTML = "¡Presionaste la tecla A!";
+          break;
+        case "e":
+          mensaje.innerHTML = "¡Presionaste la tecla E!";
+          break;
+        case "i":
+          mensaje.innerHTML = "¡Presionaste la tecla I!";
+          break;
+        case "o":
+          mensaje.innerHTML = "¡Presionaste la tecla O!";
+          break;
+        case "u":
+          mensaje.innerHTML = "¡Presionaste la tecla U!";
+          break;
+        default:
+          mensaje.innerHTML = "";
+      }
+    }
+
+    document.addEventListener("keydown", function (event) {
+      const tecla = event.key.toLowerCase();
+      mostrarMensaje(tecla);
+    });
+  </script>
+  
+<!-- Cuando se presione una de las teclas de las vocales "a, e, i, o, u", se mostrará un mensaje personalizado en el elemento <div> con el ID "mensaje". -->
+
+</head>
+
+<body>
+  <div id="mensaje"></div>
+</body>
+
+</html>
