@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 83</title>
+    <style>
+        body{
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+    </style>
+</head>
+<body>
+    <div id="output">
+        ¡Cambia el tamaño del navegador!
+    </div>
+    <hr>
+    <div id="output-2">
+        ¡Cambia el tamaño del navegador!
+    </div>
+    <script>
+        /* var ventana = window; */
+        var output = document.getElementById('output')
+        var output2 = document.getElementById('output-2')
+
+        window.addEventListener("resize",function(){
+            output.innerHTML='El tamaño del navegador es: ' + window.innerWidth + 'x' + window.innerHeight + ' --> addEventListener';
+        })
+
+        window.onresize = function(){
+            output2.innerHTML='El tamaño del navegador es: ' + window.innerWidth + 'x' + window.innerHeight + ' --> onresize';
+        }
+    </script>
+</body>
+</html>

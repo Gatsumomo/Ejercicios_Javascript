@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 41</title>
+  
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    input, button {
+      font-size: 16px; 
+    }
+  </style>
+</head>
+
+<body>
+
+    <h1>Mira la tabla de multiplicar</h1>
+    <input type="number" id="entrada" placeholder="Introduce un número">
+    <button onclick="calculo()">Enviar</button>
+    <div id="resultado"></div>
+
+    <script>
+        function calculo(){
+          const resultado = document.getElementById('resultado')
+          const numero = document.getElementById('entrada').value
+            var i = 1
+            var suma = 0
+            do{
+              //aqui va algo de prompt
+              suma =+ numero
+              i++
+            }while(numero =! 0)
+            resultado.innerHTML = suma
+        }
+    </script>
+  
+</body>
+
+</html>

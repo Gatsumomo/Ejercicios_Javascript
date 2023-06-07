@@ -1,0 +1,78 @@
+﻿<!-- EJERCICIO 48 (EJERCICIO 23) – Crear un código HTML+CSS+JavaScript que pida introducir un número "de manera infinita", pero que se pueda interrumpir cuando se introduzca la palabra "salir". -->
+
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+	<title>Bucle infinito - Solicitar número</title>
+    
+	<style>
+        body {
+            font-family:Arial,sans-serif;
+            text-align:center;
+        }
+		input,button {
+			font-size:20px;
+            margin-top:20px;
+		}
+		#resultado {
+            margin-top:20px;
+            font-weight:bold;
+		}
+    </style>
+
+</head>
+
+<body>
+
+    <h1>Bucle infinito - Solicitar número</h1>
+    <button onclick="solicitarNumero()">Iniciar bucle</button>
+
+    <script>
+        function solicitarNumero() {
+            let input;
+            while (true) {
+                input = prompt("Introduzca un número o escribe 'salir' para detener el bucle:", "");
+                if (input === "salir") {
+                    break;
+                }
+
+				if (!isNaN(parseInt(input))) {
+                    console.log("Número introducido:",input);
+                } else {
+                    alert("Por favor, introduzca un número válido.");
+                } // Opción 1
+
+				// Se verifica si la entrada, almacenada en la variable "input" es un número válido o no. Si es un número válido, muestra el número en la consola; de lo contrario, muestra una alerta indicando que se debe introducir un número válido.
+				// "parseInt(input)": La función "parseInt()" intenta convertir la variable "input" en un número entero. Si "input" no es un número, devuelve "NaN" (Not-a-Number, es decir, "no es un número").
+				// "!isNaN(parseInt(input))": La función "isNaN()" verifica si el valor que recibe es "NaN", y, en este caso, se está utilizando ! (operador de negación) para invertir el resultado.
+				// Entonces, si "parseInt(input)" devuelve un "número", "isNaN(parseInt(input))" será "false" y "!isNaN(parseInt(input))" será "true".
+				// "if (!isNaN(parseInt(input)))": Esta condición evalúa si "input" es un número válido. Si lo es, el bloque de código dentro de las llaves {} se ejecutará.
+				// "console.log("Número introducido:", input);": Si la condición es verdadera, es decir, input es un número válido, esta línea mostrará el mensaje "Número introducido:" seguido del valor de input en la consola.
+				// "else": Si la condición no se cumple. es decir, input no es un número válido, se ejecutará el bloque de código dentro de las llaves {} después de else.
+				// "alert("Por favor, introduzca un número válido.");": Si la condición es falsa, es decir, input no es un número válido, esta línea mostrará una alerta en el navegador web con el mensaje "Por favor, introduzca un número válido.".
+				// Por lo tanto, se verifica si la entrada del usuario es un número válido y muestra un mensaje apropiado según el resultado.
+				
+				/* 	if (isFinite(+input)) {
+						console.log("Número introducido:", input);
+					} else {
+						alert("Por favor, introduzca un número válido.");
+					}	//Opción 2 */
+
+				// Se verifica si la variable "input" contiene un número válido y finito. Si es así, muestra el número introducido en la consola; de lo contrario, muestra una alerta solicitando que se introduzca un número válido.
+				// "isFinite(+input)": Esta función "isFinite()" verifica si el valor proporcionado es un número finito. El operador "+" antes de "input" convierte el valor de "input" en un número. Si "input" no es un número o es infinito, la función devuelve "false".
+				// "if (isFinite(+input))": Este es un bloque condicional "if". Si la función "isFinite()" devuelve "true", es decir, si input es un número finito, entonces se ejecutará el bloque de código siguiente.
+				// "console.log("Número introducido:", input);": Si la condición del if es verdadera, esta línea muestra el mensaje "Número introducido:" seguido del valor de "input" en la consola.
+				// "else": Este es un bloque condicional "else". Si la condición del if es "falsa", es decir, si "input" no es un número finito, entonces se ejecutará el bloque de código siguiente.
+				// "alert("Por favor, introduzca un número válido.");": Si la condición del "if" es falsa, esta línea muestra una alerta en el navegador web con el mensaje "Por favor, introduzca un número válido."
+
+            }
+        }
+    </script>
+
+</body>
+
+</html>

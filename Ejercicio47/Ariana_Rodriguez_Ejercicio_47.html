@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 47</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    input, button {
+      font-size: 16px; 
+    }
+  </style>
+</head>
+
+<body>
+    <h1>PETICION DE NUMEROS</h1>
+    <p>El programa pedirá números, si es negativo se interrumpe el programa, si es positivo continua pidiendo números hasta que se introduzca 0.</p>
+    <button onclick="peticion()">Enviar</button><hr>
+    <div id="resultado"></div>
+
+    <script>
+      function peticion(){
+        let resultado = document.getElementById('resultado')
+        
+        let clave = true
+        do{
+            let tabien = parseInt(Number(prompt('Introduzca un numero positivo: ')))
+            if(tabien > 0){
+              let multiplicacion = tabien * 2
+              resultado = multiplicacion
+              resultado += "Para salir introduce 0"
+              document.getElementById('resultado').innerHTML=resultado
+              while(!(tabien === 0)){
+                let tabien = parseInt(Number(prompt('Introduzca un numero positivo: ')))
+                let multiplicacion = tabien * 2
+                resultado = multiplicacion
+              }
+              break;
+            }else{
+                clave = false
+                resultado = "Nop, es negativo"
+                document.getElementById('resultado').innerHTML=resultado
+            }
+        }while(clave === true)
+
+        /* let clave = true
+        do{
+            if(numero <= 0){
+                clave = false
+            }else{
+                let doble = numero * 2
+                resultado.innerHTML = doble
+            }
+        }while(clave === true) */
+
+      }
+    </script>
+</body>
+</html>

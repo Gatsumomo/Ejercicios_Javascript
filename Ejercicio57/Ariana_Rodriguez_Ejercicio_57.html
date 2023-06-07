@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 57</title>
+  
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    input, button {
+      font-size: 16px; 
+    }
+
+  </style>
+</head>
+
+<body>
+    <h1>Genera una lista de nombres</h1>
+<!--     <button onclick="generar()">Generar</button> -->
+    <div id="res"></div>
+
+    <script>
+        window.onload = function(){
+            generar();
+        }
+
+        function generar(){
+            var array = ["Eduardo","Ilsina","Javier","José Luis","George Jeymi","Raúl","María del Valle","Nathaly Paola","Ariana","Luz María"]
+            let resultado  = document.getElementById('res')
+            
+            var uno = array[3]
+            var dos = array[6] 
+
+            array[3] = dos
+            array[6] = uno
+
+            for(var i=0;i < array.length;i++){
+                resultado += array[i] + "<br/>"
+                document.getElementById('res').innerHTML=resultado
+            }
+        }
+    </script>
+  
+</body>
+</html>

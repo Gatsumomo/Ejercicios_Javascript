@@ -1,0 +1,95 @@
+﻿<!-- EJERCICIO 53 (EJERCICIO 28) – Realizar el código HTML+CSS+JavaScript del EJERCICIO 25 (piedra, papel o tijeras) con la estructura "switch". -->
+
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>Piedra, Papel o Tijeras</title>
+
+    <style>
+        body {
+            font-family:Arial,sans-serif;
+            text-align:center;
+        }
+        button {
+            font-size:20px;
+			font-weight:bold;
+            padding:10px 20px;
+            margin:10px; /* <!--1em =  16px--> */
+        }
+        #resultado {
+            font-size:40px;
+            font-weight:bold;
+            margin-top:20px;
+			margin-bottom:20px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h1>Piedra, Papel o Tijeras</h1>
+
+    <p>Jugador 1:</p>
+    <button onclick="jugar('piedra')">Piedra</button>
+    <button onclick="jugar('papel')">Papel</button>
+    <button onclick="jugar('tijeras')">Tijeras</button>
+
+    <p>Jugador 2:</p>
+    <button onclick="jugar('piedra',true)">Piedra</button>
+    <button onclick="jugar('papel',true)">Papel</button>
+    <button onclick="jugar('tijeras',true)">Tijeras</button><br><br>
+    
+    <button onclick="detener()">Detener Juego</button>
+	
+    <div id="resultado"></div>
+
+	<script>
+    let eleccionJugador1 = '';
+    let eleccionJugador2 = '';
+    let continuarJuego = true; // Se utiliza "true" como expresión y se compara cada caso con las condiciones del juego.
+
+    function jugar(opcion, esJugador2 = false) {
+        if (!continuarJuego) {
+            return;
+        }
+
+        if (esJugador2) {
+            eleccionJugador2 = opcion;
+        } else {
+            eleccionJugador1 = opcion;
+        }
+
+        while (eleccionJugador1 && eleccionJugador2) {
+            let resultado = '';
+            switch (true) {
+                case eleccionJugador1 === eleccionJugador2:
+                    resultado = 'Empate';
+                    break;
+                case (eleccionJugador1 === 'piedra' && eleccionJugador2 === 'tijeras'):
+                case (eleccionJugador1 === 'papel' && eleccionJugador2 === 'piedra'):
+                case (eleccionJugador1 === 'tijeras' && eleccionJugador2 === 'papel'):
+                    resultado = 'Jugador 1 gana';
+                    break;
+                default:
+                    resultado = 'Jugador 2 gana';
+            }
+            document.getElementById('resultado').innerHTML = resultado;
+            eleccionJugador1 = '';
+            eleccionJugador2 = '';
+        }
+    }
+
+    function detener() {
+        continuarJuego = false;
+        document.getElementById('resultado').innerHTML = 'Juego detenido';
+    }
+	</script>
+	
+</body>
+
+</html>

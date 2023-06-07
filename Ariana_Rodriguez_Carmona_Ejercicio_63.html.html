@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 63</title>
+    <style>
+        body{
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            text-align: center;
+            font-size:large;
+        }
+        #title>h2{
+            font-weight: 900;
+        }
+    </style>
+</head>
+<body>
+    <div id="title">
+        <h2>Ordenar un array</h2>
+    </div>
+
+    <div id="start">
+    </div><br>
+
+    <div id="output">
+    </div>
+
+    <script>
+        //creacion del array
+        const array = [4,3,2,1,5,6,7];
+
+        //Mostrar array desordenado en pantalla
+        document.getElementById('start').innerHTML=`El array <b>desordenado</b> es el siguente: ` + array.join();
+
+        //ordenacion del array
+            for(let i=0;i<array.length;i++){
+                for(let j=0;j<array.length;j++){
+                    if(array[i] < array[j]){
+                        let num = array[i];
+                        let numm = array[j];
+                        array[i] = numm;
+                        array[j] = num;
+                    }
+                }
+            }
+
+        //Mostrar array ordenado en consola y pantalla
+        console.log(array.join()); 
+        document.getElementById('output').innerHTML=`El array <b>desordenado</b> es: ` + array.join();
+    </script>
+</body>
+</html>

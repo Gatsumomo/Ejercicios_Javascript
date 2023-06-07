@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 77</title>
+    <style>
+        #resultado{
+            margin-top: 1rem;
+        }
+        body{
+            text-align: center;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        h1{
+            color: coral;
+        }
+        .con_keycode{
+            margin-top: 15%;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="con_keycode">
+        <hr>
+        <h1>Introduce una vocal o numero (0-9):</h1>
+        <input type="text" id="inicial">
+        <div id="resultado"></div><br>
+        <hr>
+    </div>
+
+    <script type="text/javascript">
+    //funcion sin keycode | ABECEDARIO EN (MAYUS.-MINUS.), Y NUMEROS (0-9)
+            document.getElementById('inicial').addEventListener("keydown", function(event){
+                const array = [1,2,3,4,5,6,7,8,9];
+                for(let i=0;i<array.lenght;i++){
+                    if(event.key === array[i]){
+                        document.getElementById('resultado').innerText='Has introducido el número: ' + event.key
+                        break;
+                    }else{
+                        const final = event.key.toLowerCase()
+                        switch(final){
+                            case ('a'):
+                                document.getElementById('resultado').innerText='Has introducido la vocal: ' + final
+                                console.log('el usuario ha realizado una accion con vocal')
+                                break;
+                            case ('e'):
+                                document.getElementById('resultado').innerText='Has introducido la vocal: ' + final
+                                console.log('el usuario ha realizado una accion con vocal')
+                                break;
+                            case ('i'):
+                                document.getElementById('resultado').innerText='Has introducido la vocal: ' + final
+                                console.log('el usuario ha realizado una accion con vocal')                        
+                                break;
+                            case ('o'):
+                                document.getElementById('resultado').innerText='Has introducido la vocal: ' + final
+                                console.log('el usuario ha realizado una accion con vocal')
+                                break;
+                            case ('u'):
+                                document.getElementById('resultado').innerText='Has introducido la vocal: ' + final
+                                console.log('el usuario ha realizado una accion con vocal')
+                                break;
+                            default: 
+                                document.getElementById('resultado').innerText= '¡No es válido!'
+                                console.log('el usuario ha realizado una accion ' + final)
+                            break;
+                        }
+                    }
+                }
+            })  
+        //KEYCODE DE BLOQ MAYUS - 20
+    </script>
+</body>
+</html>
+
+//onchange, onselect, onblur(tabulador)-cuando lo pierde,onfocus-cuando lo recibe(cuando se hace click dentro de un campo)
+ por campos (input) 
+||onreset, onsubmit 
+form

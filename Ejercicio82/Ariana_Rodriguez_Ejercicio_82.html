@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        #title{
+            font-size: larger;
+        }
+        button{
+            width: 5rem;
+        }
+        #submit{
+            background-color: rgb(146, 218, 146);
+        }
+        #reset{
+            background-color:rgb(250, 102, 102);
+        }
+        button{
+            border: 0rem;
+            border-radius: 7%;
+        }
+        input:hover{
+            background-color: rgb(204, 204, 204);
+        }
+        textarea:hover{
+            background-color: rgb(204, 204, 204);
+        }
+    </style>
+
+    <title>Ejercicio 82</title>
+</head>
+<body>
+    <div id="title">
+        <h2>Formulario</h2>
+    </div>
+    <div id="form-wrapper">
+        <form action="POST" onsubmit="alert('Formulario enviado')" onreset="alert('Formulario reseteado')" name="Datos">
+            <label for="name">Nombre: </label>
+            <input type="text" id="name" onchange="change()" onblur="blur()" onfocus="focus()"><br/><br/>
+    
+            <label for="email">Email: </label>
+            <input type="text" id="email" onchange="change()" onblur="blur()" onfocus="focus()"><br/><br/>
+    
+            <label for="password">Contraseña: </label>
+            <input type="password" id="password" onblur="blur()"><br/><br/>
+    
+            <label for="text-section">Comentario: </label>
+            <textarea name="text-section" id="text-section" cols="50" rows="5" onselect="select()"></textarea><br/><br/>
+    
+            <button type="submit" id="submit">Enviar</button>
+            <button type="reset" id="reset">Eliminar</button>
+        </form>
+    </div>
+    <div id="result">
+    </div>
+
+    <script>
+        function change(){
+            console.log("El valor del campo ha cambiado"); //funciona
+        }
+        function submit(){
+            console.log("El formulario se ha enviado"); //no se muestra por consola
+        }
+        function reset(){
+            console.log("El formulario se ha eliminado"); //no se muestra por consola
+        }
+        function select(){
+            console.log("El campo ha sido seleccionado"); //no se muestra
+            document.getElementById('result').innerHTML='El campo ha sido seleccionado'
+        }
+        function blur(){
+            console.log("El campo ha perdido foco"); //no se muestra
+            document.getElementById('result').innerHTML='El campo perdió el foco'
+        }
+        function focus(){
+            console.log("El campo obtuvo el foco"); //no se muestra por consola
+            document.getElementById('result').innerHTML='campo en foco'
+        }
+
+        
+    </script>
+</body>
+</html>

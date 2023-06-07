@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        img{
+            width: 1300px;
+            height: 600px;
+        }
+    </style>
+    <title>Ejercicio 85</title>
+</head>
+<body>
+    <img src="athens-4854603_192.jpg" alt="imagen" id="imagen"> <!-- onerror="respaldo()" -->
+    <!-- <img src="greece-1594689_1920.jpg" alt="imagen" id="otra-imagen">  --> <!-- style="display: none; -->
+
+    <script type="text/javascript">
+       /*//SOLUCION DESASTROSA MIA
+        function respaldo(){
+            alert('Ups! un error')
+            const imagen = document.getElementById('imagen')
+            imagen.style.display = 'none'
+
+            const otraImagen = document.getElementById('otra-imagen')
+            otraImagen.style.display = 'block'
+        } 
+        //se podria hacer un switch para cada error (104,404,...)
+        */
+
+
+        //SOLUCION AL
+        const imagen = document.getElementById('imagen')
+        imagen.onerror = function(){
+            alert('Ups! un error')
+            imagen.src = 'greece-1594689_1920.jpg';
+        }
+    </script>
+</body>
+</html>

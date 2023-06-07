@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 58</title>
+  
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    input, button {
+      font-size: 16px; 
+    }
+
+  </style>
+</head>
+
+<body>
+    <h1>Lista de números del uno al diez</h1>
+<!--     <button onclick="generar()">Generar</button> -->
+    <div id="res"></div>
+
+    <script>
+        window.onload = function(){
+            generar();
+        }
+
+        function generar(){
+            let resultado  = document.getElementById('res')
+
+            for(var i=0;i <= 10;i++){
+                resultado.innerHTML += "- " + i + "<br/>"
+            }
+        }
+    </script>
+  
+</body>
+</html>

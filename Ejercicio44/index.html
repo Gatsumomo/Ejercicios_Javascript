@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 44</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    input, button {
+      font-size: 16px; 
+    }
+  </style>
+</head>
+
+<body>
+    <!--Este está bien-->
+    <h1>Primos y no primos</h1>
+    <input type="number" id="entrada" placeholder="Introduce un número">
+    <button onclick="peticion()">Enviar</button>
+    <div id="resultado"></div>
+
+    <script>
+
+        function peticion(){
+            const numero = document.getElementById('entrada')
+            const tabien = parseInt(numero.value)
+            const resultado = document.getElementById('resultado')
+
+            const prueba = tabien % 2   
+
+            if((tabien >= 1) && (prueba == 1)){
+                resultado.innerHTML = tabien + ' es primo'
+            }else{
+                resultado.innerHTML = tabien + ' no es primo'
+            }
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <style>
+        h1 {
+            text-align: center;
+        }
+        button {
+            margin-left: 50%;
+            transform: translateX(-50%);
+        }
+    </style>
+
+    <title>Ejercicio 76</title>
+</head>
+<body onunload='alert("La página se está descargando")' onbeforeunload='return "¿Estás seguro de que quieres entrar?"'  onload='alert("¡Saludos!");'>
+    <h1>¡Bienvenido!</h1> 
+    <button>Ádios</button>   
+    <!-- <script type="text/javascript">
+        window.onbeforeunload = function() {
+            return "¿Estás seguro de que quieres salir de esta página?";
+        };
+        window.onunload = function() {
+            alert("¡Hey! ¡Bienvenido a mi página web!");  //muestra un mensaje predeterminado
+        };
+        window.onload = function() {
+            alert("¡Saludos!");
+        };
+        function despedirse() {
+            alert("¿Estás seguro de que quieres salir de esta página?");
+            window.close();
+        };
+    </script> -->
+
+    <!--el navegador interviene onbeforeunload y onunload-->
+</body>
+</html>

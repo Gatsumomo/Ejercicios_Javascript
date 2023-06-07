@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 50</title>
+  
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    input, button {
+      font-size: 16px; 
+    }
+    .verde{
+        background-color: rgb(5, 196, 5);
+    }
+    .ambar{
+        background-color: rgb(250, 180, 49);
+    }
+    .rojo{
+        background-color: rgb(241, 7, 7);
+    }
+  </style>
+</head>
+
+<body>
+    <h1>La autovía que sigue</h1>
+    <p>Introduce: "Rojo", "Verde", "Ámbar"</p>
+    <input type="text" id="select"><br/><br/>
+    <button onclick="otroCalculo()">Enviar</button>
+    <div id="resultado"></div>
+
+    <!--Indicar type es buena práctica-->
+    <script type="text/javascript">
+      const color = document.getElementById('select')
+        function otroCalculo(){
+          const colorChecked = color.value.toLowerCase().trim()
+          let message
+          switch(colorChecked){
+            case "rojo":
+              message = "PARA!";
+              break;
+            case "verde":
+              message = "pasa";
+              break;
+            case "ambar":
+              message = "con precaución....";
+              break;
+            default:
+              message = "introduce un valor válido (rojo, verde o ambar)";
+          }
+          document.getElementById('resultado').innerHTML=message;
+        }
+
+      /* const resultado = document.getElementById('resultado')
+          const eleccion = (document.getElementById('select').innerHTML=Text)
+          
+          if(eleccion === 'rojo'){
+            resultado = 'PARA!'
+          }else if(eleccion === 'verde'){
+            resultado.innerHTML = 'pasa'
+          }else if(eleccion === 'ambar'){
+            resultado.innerHTML = 'Con precaución....'
+          }else{
+            resultado.innerHTML = 'Debes introducir: "Rojo", "Verde" o "Ámbar" para que lo nuestro funcione'
+          } */
+    </script>
+  
+</body>
+</html>

@@ -1,0 +1,44 @@
+    const drag = document.getElementById("drag");
+    const drop = document.getElementById("drop");
+
+/* Con JavaScript, se obtienen referencias a los elementos "drag" y "drop", y se crean tres funciones: "dragStart", "dragOver", y "dropHandler". */
+	
+    function dragStart(event) {
+      event.dataTransfer.setData("text/plain", event.target.id);
+    }
+/*  La función "dragStart" se activa cuando se comienza a arrastrar el elemento.
+	La función establece el atributo "event.dataTransfer.setData" con el identificador del elemento arrastrado.
+	"event.dataTransfer.setData("text/plain", event.target.id);" se utiliza para establecer los datos que se transferirán durante la operación de arrastre.
+	En este caso, se está almacenando el id del elemento arrastrado en el objeto dataTransfer con el formato "text/plain".
+	Cuando se inicia una operación de arrastre, el evento "dragstart" se activa y llama a la función "dragStart(event)".
+	La función "dragStart" utiliza el método "setData" para almacenar información sobre el elemento arrastrado en el objeto "dataTransfer".
+	En este caso, se guarda el id del elemento arrastrado "(event.target.id)" con el formato "text/plain".
+	Esta información se utiliza más adelante en la función "dropHandler" para identificar el elemento arrastrado y realizar acciones en él, como agregarlo al contenedor de destino. */
+
+    function dragOver(event) {
+      event.preventDefault();
+    }
+
+/*	La función "dragOver" se activa cuando se arrastra el elemento sobre el elemento "drop".
+	La función utiliza "event.preventDefault()" para evitar el comportamiento predeterminado del navegador web.
+	"event.preventDefault();" se utiliza para cancelar la acción predeterminada que normalmente tendría lugar cuando se dispara un evento.
+	En otras palabras, evita que el navegador ejecute la acción predeterminada asociada con el evento.
+	En este, "event.preventDefault();" se utiliza en las funciones "dragOver" y "dropHandler" para evitar que el navegador realice cualquier acción predeterminada cuando se arrastra un elemento sobre otro o se suelta un elemento arrastrado.
+	La razón por la que se utiliza aquí es para asegurar que solo las acciones personalizadas definidas en el código, como mover el objeto arrastrado, se ejecuten cuando se disparen estos eventos.
+	En la función dragOver si no se incluye "event.preventDefault();", el navegador podría no permitir que el elemento arrastrado se suelte en el contenedor de destino.
+	Al incluir "event.preventDefault();", se cancela cualquier acción predeterminada del navegador web y se permite que el elemento arrastrado se suelte correctamente en el contenedor de destino. */
+	
+    function dropHandler(event) {
+      event.preventDefault();
+      const data = event.dataTransfer.getData("text/plain");
+      console.log(data);
+    }
+
+/*	La función "dropHandler" ("drop") se activa cuando el elemento arrastrado se suelta sobre el elemento "drop".
+	La función obtiene el identificador del elemento arrastrado almacenado en "event.dataTransfer.getData()" y muestra el valor en la consola. */
+	
+    drag.addEventListener("dragstart", dragStart);
+    drop.addEventListener("dragover", dragOver);
+    drop.addEventListener("drop", dropHandler);
+	
+	/* Por último, se agregan los controladores de eventos para las funciones "dragStart", "dragOver", y "dropHandler" a los elementos "drag" y "drop". */

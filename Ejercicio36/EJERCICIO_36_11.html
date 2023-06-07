@@ -1,0 +1,30 @@
+﻿<!-- EJERCICIO 11 – Crear un algoritmo, en pseudocódigo, que pida introducir un número y que determine si es positivo, negativo o cero: si el número introducido es positivo, se mostrará el mensaje "El número introducido es positivo", si es negativo, se visualizará "El número introducido es negativo", y, en el caso de que el número introducido sea cero, se mostrará "El número introducido es cero". -->
+
+<!-- Se trata de un código HTML que incluye JavaScript y CSS. -->
+
+<!DOCTYPE html> <!-- Se declara el tipo de documento como HTML5 con <!DOCTYPE html> -->
+
+<html lang="es"> <!-- Se define el elemento raíz <html> con el atributo lang="es" indicando que el contenido está en español. -->
+
+<head> <!-- Dentro del elemento <head>: -->
+
+  <meta charset="UTF-8"> <!-- Se especifica la codificación de caracteres como UTF-8 con <meta charset="UTF-8"> -->
+  
+  <title>Verificar si un número es positivo, negativo o cero</title> <!-- Se establece el título de la página con <title>Verificar si un número es positivo, negativo o cero</title> -->
+  
+  <!-- Se incluyen estilos CSS para dar formato a los elementos de la página. -->
+  <link href="styles.css" type="text/css" rel="stylesheet">
+
+</head>
+
+<body> <!-- Dentro del elemento <body>: -->
+
+  <h1>Verificar si un número es positivo, negativo o cero</h1> <!-- Se crea un título <h1>Verificar si un número es positivo, negativo o cero</h1> -->
+  <input type="number" id="entradaNumero" placeholder="Introduce un número"> <!-- Se crea un campo de entrada de tipo número con <input type="number" id="entradaNumero" placeholder="Introduce un número"> -->
+  <button onclick="verificarNumero()">Verificar</button> <!-- Se crea un botón con <button onclick="verificarNumero()">Verificar</button> que llama a la función verificarNumero() cuando se hace clic en él. -->
+  <p id="resultado"></p> <!-- Se crea un elemento <p id="resultado"></p> donde se mostrará el resultado. -->
+  
+  <script src="script.js"></script>
+</body>
+
+</html>

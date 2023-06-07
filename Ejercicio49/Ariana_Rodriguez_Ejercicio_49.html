@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 49</title>
+  
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    input, button {
+      font-size: 16px; 
+    }
+  </style>
+</head>
+
+<body>
+
+    <h1>Calculo del factorial de un número</h1>
+    <input>
+    <button onclick="calculo()">Enviar</button>
+    <div id="resultado"></div>
+
+    <script>
+
+    function calculo(){
+        let entrada = Number(prompt("Introduzca un número: "))
+        let factorial = 1
+
+        if(entrada == 0){
+            return 1
+        }else{
+            for(var i = 1;i++;i<=entrada){
+                factorial *= 1
+            }
+        }
+    }
+    </script>
+  
+</body>
+
+</html>

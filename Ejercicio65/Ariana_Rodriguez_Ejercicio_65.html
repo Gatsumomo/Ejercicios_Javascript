@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 65</title>
+  
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    input, button {
+      font-size: 16px; 
+    }
+  </style>
+  <link rel="stylesheet" href="/pruebas/project/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="text-center">
+          <h1>Callback</h1>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <div class="text-center">
+          <button id="callback-btn" class="btn btn-secondary">Haz click aquí</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="text-center">
+            <button id="callback-btn" class="btn btn-secondary">Haz click aquí</button>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="text-center">
+              <button id="callback-btn" class="btn btn-secondary">Haz click aquí</button>
+            </div>
+          </div>
+    </div>
+  </div>
+
+    <!-- <h1>CALLBACK</h1>
+    <button id="callback-btn">Haz click aquí</button>
+    <button id="callback-btn">Haz click aquí</button>
+    <button id="callback-btn">Haz click aquí</button>
+ -->
+    <!--getElementById coge el primer elemento con ese id, de forma descendente-->
+    
+    <script>
+        document.querySelector("#callback-btn").addEventListener("click", function(){
+            console.log("Has hecho click");
+        });
+    </script>
+</body>
+</html>

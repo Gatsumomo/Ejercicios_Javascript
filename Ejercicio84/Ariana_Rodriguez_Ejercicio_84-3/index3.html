@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+    #drag {
+      width:150px;
+      height:100px;
+      padding-top:30px;
+      cursor:move;
+	}
+    #drop {
+      width:200px;
+      height:100px;
+      background-color:red;
+      color:white;
+      text-align:center;
+      padding-top:60px;
+    }
+    </style>
+    <title>Ejercicio 84</title>
+</head>
+<body>
+    <div>
+        <img src="uno.jpg" alt="imagen" id="drag" draggable="true">
+    </div>
+    <div id="drop">
+        ¡Suelta la imagen aquí!
+    </div>
+    <div class="nueva-posicion">
+        <!--aqui va la nueva imagen-->
+    </div>
+
+    <script type="text/javascript">
+        const drag = document.getElementById('drag');
+        const drop = document.getElementById('drop');
+
+        function dragStart(event) {
+            event.dataTransfer.setData("text/plain", event.target.id);
+        }
+
+        function dragOver(event) {
+            event.preventDefault();
+        }
+
+        function dropHandler(event) {
+            event.preventDefault();
+            const data = event.dataTransfer.getData("text/plain");
+            const draggedElement = document.getElementById(data);
+
+            event.target.appendChild(draggedElement);
+
+            draggedElement.style.display = 'none'; 
+            data.style.transform = scaleX(1.5);
+            /* draggedElement.style.opacity = '0'; */
+        }
+
+        drag.addEventListener("dragstart", dragStart);
+        drop.addEventListener("dragover", dragOver);
+        drop.addEventListener("drop", dropHandler);
+    </script>
+</body>
+</html>

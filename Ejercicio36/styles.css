@@ -1,0 +1,7 @@
+body { /* Esta parte del código es un selector CSS que apunta al elemento <body> de un documento HTML. Las reglas de estilo que se encuentren entre las llaves {} se aplicarán al elemento <body> y a todos sus elementos hijos, a menos que se especifique lo contrario. */
+font-family: Arial, sans-serif; /* Esta declaración de estilo indica que el tipo de fuente (font-family) para el elemento <body> y sus elementos hijos debe ser Arial. Si Arial no está disponible, entonces se utilizará una fuente sans-serif genérica. */
+}
+input, button { /* Este selector CSS apunta a los elementos <input> y <button> de un documento HTML. Las reglas de estilo que se encuentren entre las llaves {} se aplicarán a estos elementos. */
+font-size: 16px; /* Esta declaración de estilo indica que el tamaño de fuente (font-size) para los elementos <input> y <button> debe ser de 16 píxeles. 
+                 1en = 1px*/
+}

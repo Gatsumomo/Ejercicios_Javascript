@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 86</title>
+</head>
+<body>
+    <img id="image" src="https://images6.alphacoders.com/122/1227495.jpg" alt="imagen"> <!--onabort="abort()"--> 
+
+    <!--https://i.blogs.es/144e2c/avatar/450_1000.jpg-->
+    <!--https://images5.alphacoders.com/131/1311994.jpeg-->
+    <!--https://images.alphacoders.com/131/1311951.jpg-->
+    <!--https://images6.alphacoders.com/122/1227495.jpg-->
+    <script>
+      /*   function abort(){
+            alert('errooooooooooooor')
+            console.log('Error al cargar la imagen')
+        }
+ */
+        let imagen = document.getElementById('image')
+        imagen.addEventListener("abort",function(){
+            alert('errooooooooooooor')
+            console.log('Error al cargar la imagen')
+        })
+    </script>
+</body>
+</html>

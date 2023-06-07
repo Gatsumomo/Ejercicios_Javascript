@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 45</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    input, button {
+      font-size: 16px; 
+    }
+  </style>
+</head>
+
+<body>
+    <h1 >Pincha para generar las tablas de multiplicar</h1>
+    <div id="ro"></div>
+
+    <script>
+      window.onload = function(){
+        peticion()
+      }
+
+      function peticion(){
+        let resultado = document.getElementById('ro')
+
+        for(var i = 1;i<=10;i++){
+          resultado += "<h3>Tabla del " + i + "</h3>"
+          /*document.getElementById('resultado').innerHTML = resultado */
+          for(var j = 1;j<=10;j++){
+            //document.write(i + " x " + j + " = " + multiplicacion)
+            resultado += i + " x " + j + " = " + (i * j) + "<br/>"
+            document.getElementById('ro').innerHTML=resultado
+          }
+        }
+      }
+    </script>
+</body>
+</html>

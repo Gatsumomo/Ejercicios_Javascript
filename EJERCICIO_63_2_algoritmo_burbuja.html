@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+	<title>Ordenamiento por Burbuja</title>
+	
+    <style>
+        body {
+ 			font-family: Arial, sans-serif;
+			text-align:center;
+        }
+        .container {
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            flex-direction:column;
+        }
+        button {
+            background-color:#4CAF50;
+            border:none;
+            color:white;
+            padding:20px 30px;
+            text-align:center;
+            text-decoration:none;
+            font-size:20px;
+            margin-top:10px;
+        }
+    </style>
+	
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Ordenamiento por Algoritmo de Burbuja</h1>
+        <div id="array"></div>
+        <button onclick="burbuja()">Ordenar</button>
+    </div>
+	
+	<script type="text/javascript">
+    // Función para generar números aleatorios
+    function generarNumerosAleatorios(min,max,cantidad) {
+        let numeros = [];
+        for (let i = 0; i < cantidad; i++) {
+            numeros.push(Math.floor(Math.random() * (max - min + 1)) + min);
+			// "Math.random()" es una función que devuelve un número decimal aleatorio entre 0 (inclusive) y 1 (exclusivo).
+			// "Math.floor()" es una función que redondea hacia abajo el número decimal a su entero más cercano, obteniéndose un número entero aleatorio dentro del rango especificado.
+			// "numeros.push()" es un método que permite agregar el número entero aleatorio generado al array "numeros".
+        }
+        return numeros;
+    }
+
+    // Array de números desordenados
+    let numeros = generarNumerosAleatorios(1,99,9);
+    document.getElementById("array").innerHTML = "Array desordenado: " + numeros;
+
+    // Función de ordenamiento por burbuja
+    function burbuja() {
+        let n = numeros.length;
+        for (let i = 0; i < n - 1; i++) {
+            for (let j = 0; j < n - i - 1; j++) {
+                if (numeros[j] > numeros[j + 1]) {
+                    let temp = numeros[j];
+                    numeros[j] = numeros[j + 1];
+                    numeros[j + 1] = temp;
+                }
+            }
+        }
+        document.getElementById("array").innerHTML = "Array ordenado: " + numeros;
+    }
+	</script>
+	
+</body>
+
+</html>

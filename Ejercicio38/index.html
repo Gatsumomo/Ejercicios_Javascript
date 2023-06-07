@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 38</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    input, button {
+      font-size: 16px; 
+    }
+  </style>
+</head>
+
+<body>
+
+    <h1>Vamos a ver si estas aprobado o no</h1>
+    <input type="number" id="notita" placeholder="Introduce un número">
+    <button onclick="calculo()">Enviar</button>
+    <div id="resultado"></div>
+
+    <script>
+
+    function calculo(){
+      const numero = document.getElementById('notita');
+      const tamosbien = parseInt(numero.value);
+      const resultado = document.getElementById('resultado');
+
+      if(tamosbien >= 0 && tamosbien <= 20){
+        if(tamosbien >= 10){
+          resultado.innerHTML = 'APROBADO'
+        }else{
+          resultado.innerHTML = 'FATALITY'        
+        }
+      }else{
+        resultado.innerHTML = 'ERROR-No es un número válido'
+      }
+    }
+    
+    </script>
+</body>
+</html>
